@@ -55,8 +55,7 @@ namespace PathSmoothingULCompat
 		private static void OutputInfo()
 		{
 			OutputBlock();
-			Line("Undead Legacy", UndeadLegacyVersion.Status
-				+ " (read from " + UndeadLegacyVersion.DetectedSource + ")");
+			Line("Undead Legacy", UndeadLegacyVersion.Status);
 			Line("prefix-order fix", Compat.PrefixOrderFixStatus);
 			Line("end-of-path fix", Compat.EndOfPathFixStatus);
 			Line("'ps' tracking", Compat.ToggleTrackingStatus);

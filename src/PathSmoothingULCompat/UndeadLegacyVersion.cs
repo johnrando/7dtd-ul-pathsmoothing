@@ -20,7 +20,7 @@ namespace PathSmoothingULCompat
 		internal const string TestedFrom = "2.7.15";
 
 		/// <summary>Newest build tested. Bump only after re-checking UL's movement code against each fix.</summary>
-		internal const string TestedTo = "2.7.32";
+		internal const string TestedTo = "2.7.33";
 
 		private static string TestedRange =>
 			TestedFrom == TestedTo ? TestedFrom : TestedFrom + " - " + TestedTo;
@@ -53,13 +53,13 @@ namespace PathSmoothingULCompat
 
 			if (detected != null && from != null && to != null && detected >= from && detected <= to)
 			{
-				Status = raw + " - tested";
+				Status = "Detected v" + raw + " / Tested up to v" + TestedTo;
 				Log.Out(Compat.LogPrefix + "Undead Legacy " + raw + " detected (from " + DetectedSource
 					+ "), which is within the range this patch was tested against (" + TestedRange + ").");
 				return;
 			}
 
-			Status = raw + " - UNTESTED, only tested under " + TestedRange;
+			Status = "Detected v" + raw + " / Tested up to v" + TestedTo + " (UNTESTED)";
 			Log.Warning(Compat.LogPrefix + "Undead Legacy " + raw + " detected (from " + DetectedSource
 				+ "), but this patch has only been tested under Undead Legacy " + TestedRange
 				+ ". It will still install, and each fix logs an error if the code it targets no longer "
